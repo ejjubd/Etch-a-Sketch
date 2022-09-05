@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.header{
+    font-size: 40px;
+}
+
+
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+   align-items: center;
+
+}
+.settings{
+    height: 450px;
+    width: 300px;
+    background-color: rgb(196, 181, 181);
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    
+   
+}
+.grid-element{
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+}
+

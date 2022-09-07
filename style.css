@@ -51,6 +51,8 @@ body{
     border-color: rgb(200, 202, 201);
     color: white;
 }
+
+
 #color-button{
     height: 70px;
     width: 70px;
@@ -58,18 +60,24 @@ body{
     background-color: brown;
     border: none;
 }
+#color-mode{
+    background-color: rgb(8, 1, 15);
+}
 .grid-container{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
+    gap: 0px;
     background-color: white;
     box-shadow: 0 0 10px rgb(243, 239, 239);
+    cursor: pointer;
     
    
 }
 .grid-element{
     height: 30px;
     width: 30px;
-    border: 1px solid rgb(27, 27, 27);
+   border: none;
+    background-color: white;
 }
 
 .settings{

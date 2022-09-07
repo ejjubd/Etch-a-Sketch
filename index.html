@@ -14,15 +14,15 @@
 <div class="main">
     <div class="settings">
        <button id="color-button"></button>
-        <button  id="color-mode"  class="settings-buttons">Color Mode</button>
-        <button class="settings-buttons">Rainbow Mode</button>
-        <button  id="erase-button" class="settings-buttons">Eraser</button>
-        <button class="settings-buttons">Clear</button>
-         <div>Place for changing grid size</div>
+        <button id="color-mode"  class="settings-buttons">Color Mode</button>
+        <button id="rainbow-mode"  class="settings-buttons">Rainbow Mode</button>
+        <button id="erase-button" class="settings-buttons">Eraser</button>
+        <button id="clear-button"  class="settings-buttons">Clear</button>
+        <input id="sizeSlider" type="range" value="16" min="1" max="64" />
          <hr>
          <p>Grid size 16 x 16</p>
     </div>
-    <div  class="grid-container">
+    <div id="grid-container" class="grid-container">
         <div  class="grid-element"></div>
         <div class="grid-element"></div>
         <div class="grid-element"></div>

@@ -5,18 +5,25 @@
     
 }
 
+                                          
+
 body{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    background-color: rgb(188, 164, 226);
+    background-color: rgb(7, 1, 17);
 }
+
+@import url('http://fonts.cdnfonts.com/css/retro-new-version');                                           
 
 .header{
     font-size: 40px;
     margin-top: 50px;
+    color: brown;
+    font-family: 'Retro New Version', sans-serif;
+                                           
 }
 
 
@@ -31,18 +38,38 @@ body{
     height: 450px;
     width: 300px;
     background-color: rgb(196, 181, 181);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.settings-buttons{
+    width: 90%;
+    height: 40px;
+    background-color: rgb(91, 97, 96);
+    border-radius: 20px;
+    border-color: rgb(200, 202, 201);
+    color: white;
+}
+#color-button{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: brown;
+    border: none;
 }
 .grid-container{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    background-color: beige;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(243, 239, 239);
     
    
 }
 .grid-element{
     height: 30px;
     width: 30px;
-    border: 1px solid black;
+    border: 1px solid rgb(27, 27, 27);
 }
 
 .settings{
@@ -53,9 +80,3 @@ body{
    
 }
 
-.color{
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    background-color: brown;
-}

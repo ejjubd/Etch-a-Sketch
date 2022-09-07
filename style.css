@@ -53,13 +53,13 @@ body{
 }
 
 
-#color-button{
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    background-color: brown;
-    border: none;
+#color-picker{
+    height: 30px;
+    width: 70%;
+   
+  
 }
+
 #color-mode{
   
 }

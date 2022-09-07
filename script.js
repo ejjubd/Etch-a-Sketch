@@ -4,14 +4,13 @@ const colorMode = document.querySelector('#color-mode');
 const clearButton = document.querySelector('#clear-button');
 const rainbowMode = document.querySelector('#rainbow-mode')
 const colorPicker = document.querySelector('#color-picker')
-
-
-
 const container = document.querySelector('.grid-container')
 
 let colour = []
-let value = '#333333'
-for(let i=0;i<=256;i++){
+let defaultColor= '#333333'
+
+
+for(let i=1;i<=256;i++){
     let el = document.createElement('div')
     el.className = 'grid-element'
     colour.push(el)
@@ -27,34 +26,44 @@ let canDraw = false
     window.addEventListener('mouseup', function(){
         canDraw = false
     })
+    
+colour.forEach( function(element){
+        element.addEventListener('mouseover', function(){
+                 if(canDraw){
+                     element.style.backgroundColor =  `${defaultColor}`;
+                     
+                 }
+          })
+          element.addEventListener('click', function(){
+             element.style.backgroundColor = `${defaultColor}` ;
+             })
+             
+         })   
+
  
-
-   
-
-   
-      colorPicker.addEventListener('change', function(){
-       
-          value = document.getElementById('color-picker').value
+colorPicker.addEventListener('change', function(){
+        let newColor = document.getElementById('color-picker').value
         document.getElementById('erase-button').style.backgroundColor = 'grey'
         document.getElementById('clear-button').style.backgroundColor = 'grey';
         document.getElementById('rainbow-mode').style.backgroundColor = 'grey';
-    }) 
+   
         colour.forEach( function(element){
             element.addEventListener('mouseover', function(){
                      if(canDraw){
-                         element.style.backgroundColor =  `${value}`;
+                         element.style.backgroundColor =  `${newColor}`;
                          
                      }
               })
               element.addEventListener('click', function(){
-                 element.style.backgroundColor = `${value}` ;
+                 element.style.backgroundColor = `${newColor}` ;
                  })
                  
              })  
    
- 
+            }) 
    
-    eraseButton.addEventListener('click', function(){
+    
+ eraseButton.addEventListener('click', function(){
          document.getElementById('erase-button').style.backgroundColor = 'black'
         
          document.getElementById('clear-button').style.backgroundColor = 'grey';
@@ -71,19 +80,7 @@ let canDraw = false
             })  
    })
 
- 
-   
-
-   
-   
-   
-   
-   
-   
-   
-      
-
-    clearButton.addEventListener('click', function(){
+ clearButton.addEventListener('click', function(){
         document.getElementById('clear-button').style.backgroundColor = 'black';
        
         document.getElementById('erase-button').style.backgroundColor = 'grey';
@@ -94,7 +91,7 @@ let canDraw = false
 
     })
 
-    rainbowMode.addEventListener('click',function(){
+rainbowMode.addEventListener('click',function(){
         document.getElementById('rainbow-mode').style.backgroundColor = 'black';
         document.getElementById('clear-button').style.backgroundColor = 'grey';
        

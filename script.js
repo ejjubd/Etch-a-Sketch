@@ -2,12 +2,13 @@ const body = document.querySelector('body');
 const eraseButton = document.querySelector('#erase-button');
 const colorMode = document.querySelector('#color-mode');
 const clearButton = document.querySelector('#clear-button');
-const rainbowMode = document.querySelector('#rainbow-mode')
-const colorPicker = document.querySelector('#color-picker')
-const container = document.querySelector('.grid-container')
+const rainbowMode = document.querySelector('#rainbow-mode');
+const colorPicker = document.querySelector('#color-picker');
+const container = document.querySelector('.grid-container');
+const gridSize = document.querySelector('#sizeSlider');
 
-let colour = []
-let defaultColor= '#333333'
+let colour = [];
+
 
 
 for(let i=1;i<=256;i++){
@@ -29,16 +30,16 @@ let canDraw = false
 
 
 
-let defaultColour = document.getElementById('color-picker').value  
+let defaultColor = document.getElementById('color-picker').value  
 colour.forEach( function(element){
         element.addEventListener('mouseover', function(){
                  if(canDraw){
-                     element.style.backgroundColor =  `${defaultColour}`;
+                     element.style.backgroundColor =  `${defaultColor}`;
                      
                  }
           })
           element.addEventListener('click', function(){
-             element.style.backgroundColor = `${defaultColour}` ;
+             element.style.backgroundColor = `${defaultColor}` ;
              })
              
          })  
@@ -145,3 +146,33 @@ rainbowMode.addEventListener('click',function(){
             })
             })  
     })
+
+    gridSize.addEventListener('change', function(){
+        let inputValue = document.getElementById("sizeSlider").value;
+        document.getElementById("grid-size-text").innerHTML = `Grid size ${inputValue} x ${inputValue}` ; 
+       
+        for(let i=1 ;i<= `${(inputValue)*(inputValue)}` ;i++){
+            let el = document.createElement('div')
+            el.className = 'grid-element'
+            colour.push(el)
+            container.appendChild(el)
+            document.getElementById('grid-container').style.gridTemplateColumns = ` repeat(${inputValue}, 1fr)`
+            document.getElementById('grid-container').style.gridTemplateRows = ` repeat(${inputValue}, 1fr)`
+        }
+        let newColor = document.getElementById('color-picker').value  
+        colour.forEach( function(element){
+                element.addEventListener('mouseover', function(){
+                         if(canDraw){
+                             element.style.backgroundColor =  `${newColor}`;
+                             
+                         }
+                  })
+                  element.addEventListener('click', function(){
+                     element.style.backgroundColor = `${newColor}` ;
+                     })
+                     
+                 })  
+     
+    })
+
+

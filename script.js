@@ -26,7 +26,23 @@ let canDraw = false
     window.addEventListener('mouseup', function(){
         canDraw = false
     })
- 
+
+
+
+let defaultColour = document.getElementById('color-picker').value  
+colour.forEach( function(element){
+        element.addEventListener('mouseover', function(){
+                 if(canDraw){
+                     element.style.backgroundColor =  `${defaultColour}`;
+                     
+                 }
+          })
+          element.addEventListener('click', function(){
+             element.style.backgroundColor = `${defaultColour}` ;
+             })
+             
+         })  
+
 
 
 colorMode.addEventListener('click', function(){
@@ -50,10 +66,6 @@ colorMode.addEventListener('click', function(){
 
 })
 
-
- 
-
- 
 colorPicker.addEventListener('change', function(){
         let newColor = document.getElementById('color-picker').value
         document.getElementById('erase-button').style.backgroundColor = 'grey'
@@ -76,8 +88,7 @@ colorPicker.addEventListener('change', function(){
    
             }) 
    
-    
- eraseButton.addEventListener('click', function(){
+eraseButton.addEventListener('click', function(){
          document.getElementById('erase-button').style.backgroundColor = 'black'
          document.getElementById('color-mode').style.backgroundColor = 'grey';
          document.getElementById('clear-button').style.backgroundColor = 'grey';
@@ -94,7 +105,7 @@ colorPicker.addEventListener('change', function(){
             })  
    })
 
- clearButton.addEventListener('click', function(){
+clearButton.addEventListener('click', function(){
         document.getElementById('clear-button').style.backgroundColor = 'black';
         document.getElementById('color-mode').style.backgroundColor = 'grey';
         document.getElementById('erase-button').style.backgroundColor = 'grey';

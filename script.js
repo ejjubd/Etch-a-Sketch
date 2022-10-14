@@ -157,7 +157,7 @@ rainbowMode.addEventListener('click',function(){
     gridSize.addEventListener('change', function(){
         removeGrid();
         let inputValue = document.getElementById("sizeSlider").value;
-        document.getElementById("grid-size-text").innerHTML = `Grid size ${inputValue} x ${inputValue}` ; 
+        document.getElementById("grid-size-text").innerHTML = ` <span class="grid-number-value"> ${inputValue} x ${inputValue} </span>` ; 
        
         for(let i=0 ;i < `${(inputValue)*(inputValue)}` ;i++){
             let el = document.createElement('div')

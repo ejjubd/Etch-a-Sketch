@@ -7,11 +7,12 @@ const colorPicker = document.querySelector('#color-picker');
 const container = document.querySelector('.grid-container');
 const gridSize = document.querySelector('#sizeSlider');
 
+
 let colour = [];
 
+  let inputValue = document.getElementById("sizeSlider").value;
 
-
-for(let i=1;i<=256;i++){
+for(let i=1;i< 256;i++){
     let el = document.createElement('div')
     el.className = 'grid-element'
     colour.push(el)
@@ -146,12 +147,19 @@ rainbowMode.addEventListener('click',function(){
             })
             })  
     })
+    
+    
+ function removeGrid () {
+        while(container.firstChild) {
+           container.removeChild(container.firstChild); } 
+    }   
 
     gridSize.addEventListener('change', function(){
+        removeGrid();
         let inputValue = document.getElementById("sizeSlider").value;
         document.getElementById("grid-size-text").innerHTML = `Grid size ${inputValue} x ${inputValue}` ; 
        
-        for(let i=1 ;i<= `${(inputValue)*(inputValue)}` ;i++){
+        for(let i=0 ;i < `${(inputValue)*(inputValue)}` ;i++){
             let el = document.createElement('div')
             el.className = 'grid-element'
             colour.push(el)
@@ -159,6 +167,7 @@ rainbowMode.addEventListener('click',function(){
             document.getElementById('grid-container').style.gridTemplateColumns = ` repeat(${inputValue}, 1fr)`
             document.getElementById('grid-container').style.gridTemplateRows = ` repeat(${inputValue}, 1fr)`
         }
+        
         let newColor = document.getElementById('color-picker').value  
         colour.forEach( function(element){
                 element.addEventListener('mouseover', function(){
@@ -174,5 +183,3 @@ rainbowMode.addEventListener('click',function(){
                  })  
      
     })
-
-

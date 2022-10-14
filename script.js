@@ -49,10 +49,10 @@ colour.forEach( function(element){
 
 colorMode.addEventListener('click', function(){
     let newColor = document.getElementById('color-picker').value
-    document.getElementById('color-mode').style.backgroundColor = 'black';
-    document.getElementById('erase-button').style.backgroundColor = 'grey';
-    document.getElementById('clear-button').style.backgroundColor = 'grey';
-    document.getElementById('rainbow-mode').style.backgroundColor = 'grey';
+    document.getElementById('color-mode').style.backgroundColor = 'rgb(39, 4, 4)';
+    document.getElementById('erase-button').style.backgroundColor = 'rgb(201, 116, 83)';
+    document.getElementById('clear-button').style.backgroundColor = 'rgb(201, 116, 83)';
+    document.getElementById('rainbow-mode').style.backgroundColor = 'rgb(201, 116, 83)';
     colour.forEach( function(element){
         element.addEventListener('mouseover', function(){
                  if(canDraw){
@@ -70,10 +70,10 @@ colorMode.addEventListener('click', function(){
 
 colorPicker.addEventListener('change', function(){
         let newColor = document.getElementById('color-picker').value
-        document.getElementById('erase-button').style.backgroundColor = 'grey'
-        document.getElementById('clear-button').style.backgroundColor = 'grey';
-        document.getElementById('rainbow-mode').style.backgroundColor = 'grey';
-        document.getElementById('color-mode').style.backgroundColor = 'black';
+        document.getElementById('erase-button').style.backgroundColor = 'rgb(201, 116, 83)';
+        document.getElementById('clear-button').style.backgroundColor = 'rgb(201, 116, 83)';
+        document.getElementById('rainbow-mode').style.backgroundColor = 'rgb(201, 116, 83)';
+        document.getElementById('color-mode').style.backgroundColor = 'rgb(39, 4, 4)';
    
         colour.forEach( function(element){
             element.addEventListener('mouseover', function(){
@@ -91,10 +91,10 @@ colorPicker.addEventListener('change', function(){
             }) 
    
 eraseButton.addEventListener('click', function(){
-         document.getElementById('erase-button').style.backgroundColor = 'black'
-         document.getElementById('color-mode').style.backgroundColor = 'grey';
-         document.getElementById('clear-button').style.backgroundColor = 'grey';
-         document.getElementById('rainbow-mode').style.backgroundColor = 'grey';
+         document.getElementById('erase-button').style.backgroundColor = 'rgb(39, 4, 4)'
+         document.getElementById('color-mode').style.backgroundColor = 'rgb(201, 116, 83)';
+         document.getElementById('clear-button').style.backgroundColor = 'rgb(201, 116, 83)';
+         document.getElementById('rainbow-mode').style.backgroundColor = 'rgb(201, 116, 83)';
          colour.forEach( function(element){
                  element.addEventListener('mouseover', function(){
                     if(canDraw){
@@ -108,10 +108,10 @@ eraseButton.addEventListener('click', function(){
    })
 
 clearButton.addEventListener('click', function(){
-        document.getElementById('clear-button').style.backgroundColor = 'black';
-        document.getElementById('color-mode').style.backgroundColor = 'grey';
-        document.getElementById('erase-button').style.backgroundColor = 'grey';
-        document.getElementById('rainbow-mode').style.backgroundColor = 'grey';
+        document.getElementById('clear-button').style.backgroundColor = 'rgb(39, 4, 4)';
+        document.getElementById('color-mode').style.backgroundColor = 'rgb(201, 116, 83)';
+        document.getElementById('erase-button').style.backgroundColor = 'rgb(201, 116, 83)';
+        document.getElementById('rainbow-mode').style.backgroundColor = 'rgb(201, 116, 83)';
         colour.forEach(function(element){
             element.style.backgroundColor= 'white'
         })
@@ -119,10 +119,10 @@ clearButton.addEventListener('click', function(){
     })
 
 rainbowMode.addEventListener('click',function(){
-        document.getElementById('rainbow-mode').style.backgroundColor = 'black';
-        document.getElementById('clear-button').style.backgroundColor = 'grey';
-         document.getElementById('color-mode').style.backgroundColor = 'grey';
-        document.getElementById('erase-button').style.backgroundColor = 'grey';
+        document.getElementById('rainbow-mode').style.backgroundColor = 'rgb(39, 4, 4)';
+        document.getElementById('clear-button').style.backgroundColor = 'rgb(201, 116, 83)';
+         document.getElementById('color-mode').style.backgroundColor = 'rgb(201, 116, 83)';
+        document.getElementById('erase-button').style.backgroundColor = 'rgb(201, 116, 83)';
          colour.forEach( function(element){
 
             element.addEventListener('mouseover', function(){
@@ -157,7 +157,7 @@ rainbowMode.addEventListener('click',function(){
     gridSize.addEventListener('change', function(){
         removeGrid();
         let inputValue = document.getElementById("sizeSlider").value;
-        document.getElementById("grid-size-text").innerHTML = ` <span class="grid-number-value"> ${inputValue} x ${inputValue} </span>` ; 
+        document.getElementById("grid-size-text").innerHTML = ` Grid size: <span class="grid-number-value"> ${inputValue} x ${inputValue} </span>` ; 
        
         for(let i=0 ;i < `${(inputValue)*(inputValue)}` ;i++){
             let el = document.createElement('div')

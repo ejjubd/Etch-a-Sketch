@@ -13,16 +13,20 @@
     <div class="header">ETCH-A-SKETCH</div>
 <div class="main">
     <div class="settings">
+       <span class="colour-container">
+        <p class="colour-text">Click to change color</p>
         <input id="color-picker" type="color" value="#333333" />
+    </span>
          <button id="color-mode" class="settings-buttons">Color Mode</button>
         <button id="rainbow-mode"  class="settings-buttons">Rainbow Mode</button>
         <button id="erase-button" class="settings-buttons">Eraser</button>
         <button id="clear-button"  class="settings-buttons">Clear</button>
        
         <span class="slider-container">
-            <p>Slide to change your grid size</p>
+         
             <input id="sizeSlider" type="range" value="16" min="1" max="64" />
-            <p id="grid-size-text"> <span class="grid-number-value">16 x 16</span> </p>
+            <p id="grid-size-text"> Grid size: <span class="grid-number-value">16 x 16</span> </p>
+            
         </span>
     </div>
     <div id="grid-container" class="grid-container">

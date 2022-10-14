@@ -41,29 +41,53 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    border-radius: 10px;
+    
 }
 
 .settings-buttons{
-    width: 90%;
+    width: 70%;
     height: 40px;
-    background-color: rgb(91, 97, 96);
+    background-color: rgb(201, 116, 83);
     border-radius: 20px;
     border-color: rgb(200, 202, 201);
-    color: white;
+    color: rgb(241, 238, 238);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: 400;
+  
 }
 
+.settings-buttons:hover{
+   color: rgb(56, 37, 37);
+}
 
+.colour-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.colour-text{
+    color: rgb(29, 26, 26);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 #color-picker{
-    height: 30px;
+    height: 50px;
     width: 70%;
-   
+    border: none;
+}
+#color-picker:hover{
+   transform: translate(1px);
+}
+#color-mode{
+    background-color:rgb(39, 4, 4);
   
 }
 
-#color-mode{
-    background-color: black;
-  
-}
+
 .grid-container{
    height: 480px;
    width: 450px;
@@ -99,15 +123,20 @@ body{
     justify-content: center;
 }
 #grid-size-text {
-    font-size: 17px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
    color: rgb(15, 15, 15);
    
 }
 
+.grid-change-text{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 .grid-number-value{
-    color: rgb(212, 79, 79);
+   color: rgb(138, 68, 41);
    
    
 }
